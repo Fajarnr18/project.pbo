@@ -1,249 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Store</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
-            color: #fff;
-        }
-        header {
-            background-color: #111;
-            padding: 20px;
-            text-align: center;
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #ffd700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-        nav {
-            background-color: #222;
-            display: flex;
-            justify-content: center;
-            padding: 15px;
-            border-bottom: 2px solid #ffd700;
-        }
-        nav a {
-            color: #ffd700;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #fff;
-        }
-        .container {
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .product {
-            border: 1px solid #333;
-            border-radius: 10px;
-            background: #2a2a2a;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .product:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        .product img {
-            max-width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .product h3 {
-            font-size: 1.8em;
-            margin: 10px;
-            color: #ffd700;
-        }
-        .product p {
-            margin: 10px;
-            color: #ddd;
-            font-weight: bold;
-        }
-        .product button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 15px;
-            width: 100%;
-            font-size: 1em;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .product button:hover {
-            background-color: #218838;
-        }
-        footer {
-            background-color: #111;
-            color: #ffd700;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: 1em;
-            border-top: 2px solid #ffd700;
-        }
-        .cart {
-            margin: 30px auto;
-            padding: 20px;
-            border: 2px solid #ffd700;
-            border-radius: 15px;
-            max-width: 500px;
-            background: #2a2a2a;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-            color: white;
-        }
-        .cart h2 {
-            text-align: center;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: #ffd700;
-        }
-        .cart ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        .cart li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 10px 0;
-            font-size: 1em;
-            border-bottom: 1px solid #444;
-            padding-bottom: 10px;
-        }
-        .cart button {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 7px 12px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .cart button:hover {
-            background-color: #c82333;
-        }
-        .cart p {
-            font-size: 1.4em;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 20px;
-            color: #ffd700;
-        }
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #28a745;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: none;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Shop</title>
+  <style>
+    /* CSS: Gaya Halaman */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    h1 {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product img {
+      width: 100%;
+      max-width: 200px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #cart {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #cart li {
+      background-color: #fff;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+    }
+
+    h3 {
+      margin-top: 20px;
+    }
+
+    /* Styling untuk nota */
+    #nota {
+      display: none;
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    #nota h4 {
+      text-align: center;
+    }
+
+    #nota ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #nota li {
+      padding: 5px 0;
+    }
+
+    #nota button {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    Fajarnr Gun Shop
-</header>
+  <h1>Selamat datang di fajarramadhan store!</h1>
 
-<nav>
-    <a href="#">Products</a>
-</nav>
-
-<div class="container">
-    <div class="product">
-        <img src="FN Scar-17s.jpg" alt="FN Scar-17s">
-        <h3>FN Scar-17s</h3>
-        <p>Rp10.000.000</p>
-        <button onclick="addToCart('FN Scar-17s', 10000000)">Add to Cart</button>
+  <div class="products">
+    <div class="product" id="product1">
+      <img src="https://i.pinimg.com/736x/42/f5/29/42f5292edd19f97c93c0184eae224ffd.jpg" alt="Produk 1">
+      <h3>Baju ramadhan</h3>
+      <p>Harga: Rp 650.000</p>
+      <button onclick="addToCart('Baju ramadhan', 120000">Tambah ke Keranjang</button>
     </div>
-    <div class="product">
-        <img src="m4.jpg" alt="M4 Carbine">
-        <h3>M4 Carbine</h3>
-        <p>Rp20.000.000</p>
-        <button onclick="addToCart('M4 Carbine', 20000000)">Add to Cart</button>
+    <div class="product" id="product2">
+      <img src="https://i.pinimg.com/736x/87/75/d1/8775d1af654f63ebf415b238b22f9a80.jpg" alt="Produk 2">
+      <h3>Peci</h3>
+      <p>Harga: Rp 200.000</p>
+      <button onclick="addToCart('Peci', 50000)">Tambah ke Keranjang</button>
     </div>
-    <div class="product">
-        <img src="m16.jpg" alt="M16 Rifle">
-        <h3>M16 Rifle</h3>
-        <p>Rp25.000.000</p>
-        <button onclick="addToCart('M16 Rifle', 25000000)">Add to Cart</button>
+    <div class="product" id="product3">
+      <img src="https://i.pinimg.com/736x/6e/ac/c8/6eacc87e929edc2ebfb08c645f3ac0f1.jpg" alt="Produk 3">
+      <h3>Sorban</h3>
+      <p>Harga: Rp 300.000</p>
+      <button onclick="addToCart('Sorban', 350000)">Tambah ke Keranjang</button>
     </div>
-</div>
+    <div class="product" id="product4">
+        <img src="https://i.pinimg.com/736x/04/7e/57/047e5779d3d0abbc9e75bd4b82a1c0e1.jpg" alt="Produk 4">
+        <h3>Kitab Alquran</h3>
+        <p>Harga: Rp 250.000</p>
+        <button onclick="addToCart('Kitab Alquran',50000)">Tambah ke Keranjang</button>
+      </div>
+  </div>
 
-<div class="cart" id="cart">
-    <h2>Shopping Cart</h2>
-    <ul id="cartItems"></ul>
-    <p id="totalPrice">Total: Rp0</p>
-</div>
+  <h2>Keranjang Belanja</h2>
+  <ul id="cart"></ul>
 
-<div class="notification" id="notification"></div>
+  <h3>Total Harga: Rp <span id="totalPrice">0</span></h3>
+  <button onclick="checkout()">Checkout</button>
 
-<footer>
-    &copy; 2024 Fajarnr Gun Shop. All rights reserved.
-</footer>
+  <!-- Nota Pembelian -->
+  <div id="nota">
+    <h4>Nota Pembelian</h4>
+    <ul id="notaItems"></ul>
+    <p><strong>Total: Rp <span id="notaTotalPrice"></span></strong></p>
+    <button onclick="resetShop()">Kembali ke Belanja</button>
+  </div>
 
-<script>
-    const cart = [];
-    const notification = document.getElementById('notification');
+  <script>
+    // JavaScript: Fungsi Logika
+    let cart = [];
+    let totalPrice = 0;
 
-    function showNotification(message) {
-        notification.textContent = message;
-        notification.style.display = 'block';
-        setTimeout(() => {
-            notification.style.display = 'none';
-        }, 2000);
-    }
+    function addToCart(productName, productPrice) {
+      // Menambah produk ke keranjang
+      cart.push({ name: productName, price: productPrice });
+      totalPrice += productPrice;
 
-    function addToCart(name, price) {
-        cart.push({ name, price });
-        updateCart();
-        showNotification(`${name} has been added to your cart!`);
-    }
-
-    function removeFromCart(index) {
-        const removedItem = cart.splice(index, 1)[0];
-        updateCart();
-        showNotification(`${removedItem.name} has been removed from your cart!`);
+      // Update keranjang di UI
+      updateCart();
     }
 
     function updateCart() {
-        const cartItems = document.getElementById('cartItems');
-        const totalPrice = document.getElementById('totalPrice');
+      // Menampilkan produk di keranjang
+      const cartList = document.getElementById('cart');
+      cartList.innerHTML = '';
 
-        cartItems.innerHTML = '';
-        let total = 0;
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - Rp ${item.price.toLocaleString()}`;
+        cartList.appendChild(li);
+      });
 
-        cart.forEach((item, index) => {
-            const li = document.createElement('li');
-            li.innerHTML = `${item.name} - Rp${item.price.toLocaleString()} <button onclick="removeFromCart(${index})">Remove</button>`;
-            cartItems.appendChild(li);
-            total += item.price;
-        });
-
-        totalPrice.textContent = `Total: Rp${total.toLocaleString()}`;
+      // Update total harga
+      document.getElementById('totalPrice').textContent = totalPrice.toLocaleString();
     }
-</script>
 
+    function checkout() {
+      if (cart.length === 0) {
+        alert('Keranjang belanja Anda kosong!');
+        return;
+      }
+
+      const confirmation = confirm(`Total Belanja Anda: Rp ${totalPrice.toLocaleString()}\nApakah Anda ingin melanjutkan ke pembayaran?`);
+      if (confirmation) {
+        // Menyembunyikan halaman belanja
+        document.querySelector('h1').style.display = 'none';
+        document.querySelector('.products').style.display = 'none';
+        document.querySelector('#cart').style.display = 'none';
+        document.querySelector('button').style.display = 'none';
+
+        // Menampilkan nota
+        showNota();
+      }
+    }
+
+    function showNota() {
+      // Menampilkan nota pembelian
+      const notaItems = document.getElementById('notaItems');
+      notaItems.innerHTML = '';
+
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - Rp ${item.price.toLocaleString()}`;
+        
+        // Adding Remove button for each item in the nota
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Hapus';
+        removeButton.onclick = () => removeFromNota(index);
+        li.appendChild(removeButton);
+
+        notaItems.appendChild(li);
+      });
+
+      document.getElementById('notaTotalPrice').textContent = totalPrice.toLocaleString();
+      document.getElementById('nota').style.display = 'block';
+    }
+
+    function removeFromNota(index) {
+      // Menghapus item dari cart dan mengurangi total price
+      const removedItem = cart.splice(index, 1)[0];
+      totalPrice -= removedItem.price;
+
+      // Update tampilan keranjang dan nota
+      updateCart();
+      showNota();
+    }
+
+    function resetShop() {
+      // Mengatur ulang tampilan ke halaman awal
+      cart = [];
+      totalPrice = 0;
+      updateCart();
+
+      document.querySelector('h1').style.display = 'block';
+      document.querySelector('.products').style.display = 'flex';
+      document.querySelector('#cart').style.display = 'block';
+      document.querySelector('button').style.display = 'inline-block';
+      document.getElementById('nota').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
